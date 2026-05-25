@@ -1,0 +1,202 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  background-color: var(--bg-space);
+  border-bottom: 1px solid var(--border-glass);
+  position: relative;
+  z-index: 100;
+  height: 70px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cattalini-logo-svg {
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(29, 39, 72, 0.1));
+}
+
+.cattalini-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: var(--neon-blue); /* Navy Blue in Light, Slate in Dark */
+  line-height: 1;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--border-glass);
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.header-subtitle {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Menu de Navegação Horizontal */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: var(--space-2) 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--neon-amber);
+  border-radius: var(--radius-full);
+}
+
+/* Ações */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.header-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  transition: all var(--transition-fast);
+}
+
+.header-status-pill.live {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  color: var(--neon-green);
+}
+
+.header-status-pill.demo {
+  background: rgba(212, 163, 22, 0.06);
+  border: 1px solid rgba(212, 163, 22, 0.15);
+  color: var(--neon-amber);
+}
+
+.header-status-pill span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Alternador de Tema */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-theme-toggle:hover {
+  background-color: var(--bg-glass-hover);
+  border-color: var(--neon-cyan);
+  color: var(--text-primary);
+}
+
+.theme-toggle-label {
+  display: inline-block;
+}
+
+.btn-api-key {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+}
+
+.btn-api-key:hover {
+  background-color: var(--bg-glass-hover);
+  color: var(--text-primary);
+  border-color: var(--neon-cyan);
+}
+
+@media (max-width: 1024px) {
+  .header-nav {
+    display: none; /* Esconde menu em telas intermediárias */
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-toggle-label, .btn-api-key {
+    display: none; /* Simplifica em telas pequenas */
+  }
+}

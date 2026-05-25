@@ -1,0 +1,65 @@
+/* Workspace.css */
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+/* ---- Tabs ---- */
+.workspace-tabs {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border-glass);
+  background: rgba(10, 15, 29, 0.9);
+  padding: 0 var(--space-4);
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.workspace-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.workspace-tab:hover {
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.workspace-tab.active {
+  color: var(--neon-amber);
+}
+
+.tab-icon { font-size: 1rem; }
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--neon-amber);
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+  box-shadow: 0 -1px 8px rgba(241, 201, 48, 0.25);
+}
+
+/* ---- Content area ---- */
+.workspace-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+}
