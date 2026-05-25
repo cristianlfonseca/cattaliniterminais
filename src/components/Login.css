@@ -1,11 +1,9 @@
-/* Login.css */
-
 .login-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-deep, #0f172a);
+  background-color: #0f172a;
   background-image: radial-gradient(circle at top right, rgba(30, 58, 138, 0.15), transparent 400px),
                     radial-gradient(circle at bottom left, rgba(15, 23, 42, 1), transparent 400px);
   padding: 20px;
@@ -14,8 +12,8 @@
 .login-card {
   width: 100%;
   max-width: 420px;
-  background-color: var(--bg-space, #1e293b);
-  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg, 12px);
   padding: 40px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -56,13 +54,13 @@
 .login-title {
   font-family: var(--font-display, 'Inter', sans-serif);
   font-size: 1.25rem;
-  color: var(--text-primary, #f8fafc);
+  color: #f8fafc;
   margin-bottom: 8px;
 }
 
 .login-subtitle {
   font-size: 0.85rem;
-  color: var(--text-secondary, #94a3b8);
+  color: #94a3b8;
 }
 
 .login-form {
@@ -80,16 +78,16 @@
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-secondary, #94a3b8);
+  color: #94a3b8;
 }
 
 .form-group input {
   width: 100%;
   padding: 12px 16px;
-  background-color: var(--bg-deep, #0f172a);
-  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md, 8px);
-  color: var(--text-primary, #f8fafc);
+  color: #f8fafc;
   font-size: 0.9rem;
   transition: all 0.2s;
 }
@@ -141,8 +139,8 @@
   margin-top: 32px;
   text-align: center;
   font-size: 0.75rem;
-  color: var(--text-muted, #64748b);
-  border-top: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  color: #64748b;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
 }
 
