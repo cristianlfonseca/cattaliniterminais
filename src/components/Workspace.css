@@ -1,11 +1,13 @@
 /* Workspace.css */
 
 .workspace {
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   height: 100%;
   background: var(--bg-deep);
   overflow: hidden;
+  border-left: 1px solid var(--border-glass);
 }
 
 /* ---- Tabs ---- */
@@ -62,4 +64,10 @@
   flex: 1;
   overflow-y: auto;
   padding: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .workspace {
+    display: none; /* Oculta em tablets e celulares para dar foco ao chat */
+  }
 }

@@ -7,6 +7,7 @@
   background-color: var(--bg-space);
   overflow: hidden;
   transition: background-color var(--transition-normal);
+  position: relative;
 }
 
 /* ---- Header Interno ---- */
@@ -467,6 +468,46 @@
   font-size: 0.75rem;
   font-weight: 500;
   margin-left: var(--space-2);
+}
+
+/* Grupo de botões de ações do Input */
+.chat-input-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mic-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border-glass);
+  background-color: var(--bg-deep);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mic-btn:hover:not(:disabled) {
+  background-color: var(--bg-glass-hover);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.mic-btn.active {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--neon-red);
+}
+
+.mic-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .text-success { color: #10b981; }

@@ -1,17 +1,13 @@
 import './Workspace.css'
 import DiagramPanel from './DiagramPanel'
 import ImprovementPanel from './ImprovementPanel'
-import SAPGuidePanel from './SAPGuidePanel'
-import DataPanel from './DataPanel'
 
 const TABS = [
   { id: 'diagram',      icon: '📊', label: 'Diagrama AS-IS' },
   { id: 'improvements', icon: '💡', label: 'Melhorias TO-BE' },
-  { id: 'sap',          icon: '🖥️', label: 'Guia SAP' },
-  { id: 'data',         icon: '📈', label: 'Analytics' },
 ]
 
-export default function Workspace({ activeTab, onTabChange, processData, sapGuide }) {
+export default function Workspace({ activeTab, onTabChange, processData }) {
   return (
     <section className="workspace">
       {/* Barra de abas */}
@@ -34,8 +30,6 @@ export default function Workspace({ activeTab, onTabChange, processData, sapGuid
       <div className="workspace-content">
         {activeTab === 'diagram'      && <DiagramPanel     processData={processData} />}
         {activeTab === 'improvements' && <ImprovementPanel processData={processData} />}
-        {activeTab === 'sap'          && <SAPGuidePanel    sapGuide={sapGuide} />}
-        {activeTab === 'data'         && <DataPanel />}
       </div>
     </section>
   )

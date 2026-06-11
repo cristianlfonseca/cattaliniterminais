@@ -24,13 +24,7 @@ const MoonIcon = () => (
   </svg>
 )
 
-const ZapIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-  </svg>
-)
-
-export default function Header({ isMockMode, theme, onToggleTheme }) {
+export default function Header({ theme, onToggleTheme }) {
   return (
     <header className="header">
       {/* Logo & Marca Corporativa da Cattalini */}
@@ -51,21 +45,10 @@ export default function Header({ isMockMode, theme, onToggleTheme }) {
       {/* Menu Corporativo Discreto */}
       <nav className="header-nav">
         <span className="nav-link active">Mapeamento</span>
-        <span className="nav-link">Histórico</span>
       </nav>
 
       {/* Ações e Status da API */}
       <div className="header-actions">
-        {/* Status central */}
-        <div className={`header-status-pill ${isMockMode ? 'demo' : 'live'}`}>
-          <span className={`status-dot ${isMockMode ? 'loading' : 'online'}`} />
-          {isMockMode ? (
-            <span><ZapIcon /> Modo Demo</span>
-          ) : (
-            <span>Gemini Conectado</span>
-          )}
-        </div>
-
         {/* Botão Seletor de Tema (Light/Dark) */}
         <button 
           className="btn-theme-toggle" 
@@ -75,16 +58,6 @@ export default function Header({ isMockMode, theme, onToggleTheme }) {
           {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           <span className="theme-toggle-label">{theme === 'light' ? 'Escuro' : 'Claro'}</span>
         </button>
-
-        <a
-          href="https://aistudio.google.com/app/apikey"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-ghost btn-api-key"
-          style={{ fontSize: '0.75rem' }}
-        >
-          🔑 Obter API Key
-        </a>
       </div>
     </header>
   )

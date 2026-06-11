@@ -136,7 +136,7 @@ Por onde vamos começar?`,
 function detectIntent(text) {
   const lower = text.toLowerCase();
   if (lower.match(/cattalini|empresa|quem somos|sobre|terminal|serviços|capacidade/)) return 'empresa';
-  if (lower.match(/requisição|solicitação|pedido|compra|aquisição|processo de compra/)) return 'requisicao';
+  if (lower.match(/requisição|solicitação|pedido|compra|aquisição|processo de compra|mapear|mapeamento|processo|fluxo/)) return 'requisicao';
   if (lower.match(/melhoria|otimiz|gargalo|to-be|proposta|sugestão|problema/)) return 'melhoria';
   return 'default';
 }

@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { geminiService } from './services/geminiService'
 import Header from './components/Header'
 import ChatPanel from './components/ChatPanel'
+import Workspace from './components/Workspace'
 import Login from './components/Login'
 import './App.css'
 
@@ -10,7 +11,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [isMockMode, setIsMockMode] = useState(false)
   const [processData, setProcessData] = useState(null)
-  const [sapGuide, setSapGuide] = useState(null)
   const [activeTab, setActiveTab] = useState('diagram')
 
   // Autenticação mockada com sessionStorage para não perder no reload
@@ -45,7 +45,6 @@ function App() {
       setMessages(prev => [...prev, agentMsg])
 
       if (result.processData) setProcessData(result.processData)
-      if (result.sapGuide) setSapGuide(result.sapGuide)
       if (result.activeTab) setActiveTab(result.activeTab)
     } catch (err) {
       setMessages(prev => [...prev, {
@@ -63,7 +62,6 @@ function App() {
     geminiService.clearHistory()
     setMessages([])
     setProcessData(null)
-    setSapGuide(null)
     setActiveTab('diagram')
     setIsMockMode(false)
   }, [])
@@ -130,6 +128,13 @@ function App() {
             onClearChat={handleClearChat}
           />
         </div>
+
+        {/* Painel de Trabalho (Workspace) */}
+        <Workspace
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          processData={processData}
+        />
       </main>
     </div>
   )
