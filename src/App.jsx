@@ -71,6 +71,11 @@ function App() {
     sessionStorage.setItem('auth', 'true')
   }
 
+  const handleLogout = useCallback(() => {
+    setIsAuthenticated(false)
+    sessionStorage.removeItem('auth')
+  }, [])
+
   if (!isAuthenticated) {
     return <Login onLogin={handleLogin} />
   }
@@ -78,9 +83,9 @@ function App() {
   return (
     <div className="app-shell">
       <Header 
-        isMockMode={isMockMode} 
         theme={theme}
         onToggleTheme={toggleTheme}
+        onLogout={handleLogout}
       />
       <main className="app-main">
         {/* Sidebar Lateral de Histórico */}

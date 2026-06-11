@@ -24,7 +24,7 @@ const MoonIcon = () => (
   </svg>
 )
 
-export default function Header({ theme, onToggleTheme }) {
+export default function Header({ theme, onToggleTheme, onLogout }) {
   return (
     <header className="header">
       {/* Logo & Marca Corporativa da Cattalini */}
@@ -57,6 +57,15 @@ export default function Header({ theme, onToggleTheme }) {
         >
           {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           <span className="theme-toggle-label">{theme === 'light' ? 'Escuro' : 'Claro'}</span>
+        </button>
+
+        {/* Botão Sair (Logout) */}
+        <button 
+          className="btn-logout" 
+          onClick={onLogout} 
+          title="Sair da Plataforma"
+        >
+          <span>🚪</span> Sair
         </button>
       </div>
     </header>
